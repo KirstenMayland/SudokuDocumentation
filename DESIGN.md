@@ -58,7 +58,9 @@ Outputs:
     >3.1 Check if num doesn’t break the puzzle by comparing it to the values in it’s row, column and subgrid (constraint = no repeat numbers besides 0 in row, column, and subgrid set)
     >>3.1.1 If it passes, find the next open slot on the table and recursively call backtrack to repeat the process of looking for a valid number
     >>>3.1.1.1 If the backtrack reveals that multiple solutions have already been found, then break out of the loop.
+    >>>
     >>>3.1.1.2 Otherwise set the current number to 0
+    >>>
     >>3.1.2 If it can't find another available slot, that means it has found a solution. Increment the number of solutions and create a copy of the current table solution to store. Set current number back to 0.
 4. Switch two rows in each set of three rows and then switch two out of three sets of three rows to further randomize the puzzle.
 5. Once the 2D array of ints (representing the sudoku table) is created, pick a random number from 40-63 and randomly replace that specified number of values with ‘0’. After each number is removed, run solver on the resulting board to make sure that removing the tile does not create more than one solution. If it does, put the tile back and remove a different one. Make sure that at least eight of the nine distinct digits are left on the board and there are at least 18 digits on the board (to make sure it has a unique solution).
@@ -72,10 +74,13 @@ Outputs:
     >3.1 Check if num doesn’t break the puzzle by comparing it to the values in it’s row, column and subgrid (constraint = no repeat numbers besides 0 in row, column, and subgrid set)
     >>3.1.1 If it passes, find the next open slot on the table and recursively call backtrack to repeat the process of looking for a valid number
     >>>3.1.1.1 If the backtrack reveals that multiple solutions have already been found, then break out of the loop.
+    >>>
     >>>3.1.1.2 Otherwise set the current number to 0
+    >>>
     >>3.1.2 If it can't find another available slot, that means it has found a solution. Increment the number of solutions and create a copy of the current table solution to store. Set current number back to 0.
 4. If no more empty squares and if no constraints are broken (i.e. puzzle works) then sudoku has been solved
     >4.1 When table is solved, increment solution count and check if not at the end of the numArray (9) for the last slot
+    >
     >4.2 If so, backtrack to continue to find more solutions until solver can no longer progress
 
 ## Dataflow through modules
